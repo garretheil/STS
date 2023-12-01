@@ -1,0 +1,122 @@
+<!-- views/newTicket.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Ticketing System</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/newticket.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+  <script src="js/newTicketData.js"></script>
+  <script src="js/filter.js"></script>
+  <script src="https://kit.fontawesome.com/998241e7ce.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Simple Ticketing System</h1>
+    <div id="links">
+      <a href="documents/portal_guide.pdf">Guide</a>
+      <a href="documents/support_guide.pdf">Support</a>
+      <a href="/">Log Out</a>
+    </div>
+  </header>
+  <main>
+    <div id="topLayer">
+      <div id="searchDiv">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" placeholder="search..." id="searchInput">
+      </div>
+      <div>
+        <button id="createTicketView">New Ticket</button>
+        <button id="userTicketsView">My Tickets</button>
+      </div>
+    </div>
+
+    <div id="ticketsLayer">
+      <table>
+        <thead>
+          <th>Ticket #</th>
+          <th>Request Type</th>
+          <th>Priority</th>
+          <th>Subject</th>
+          <th>Requester</th>
+          <th>Owner</th>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <div id="createTicketOverlay">
+    <div id="ticketForm">
+      <div class="formElements">
+        <label for="requestType">Request Type</label>
+        <select id="requestType" name="ticketRequest" required>
+          <option value="Remote Hands">Remote Hands</option>
+          <option value="Network Incident">Network Incident</option>
+          <option value="IT Incident">IT Incident</option>
+          <option value="Portal Access">Portal Access</option>
+          <option value="Systems Access">Systems Access</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="formElements">
+        <label for="ticketSubject">Subject</label>
+        <input type="text" id="ticketSubject" name="ticketSubject" required>
+      </div>
+      <div class="formElements">
+        <label for="ticketPriority">Priority</label>
+        <select id="ticketPriority" name="ticketPriority" required>
+          <option value="Customer Impacting">Customer Impacting</option>
+          <option value="High Priority">High Priority</option>
+          <option value="Medium Priority">Medium Priority</option>
+          <option value="Low Priority">Low Priority</option>
+        </select>
+      </div>
+      <div class="formElements">
+        <label for="ticketSubject">Requester</label>
+        <input type="text" id="ticketSubject" name="ticketSubject" required>
+      </div>
+      <div class="formElements">
+        <label for="ticketSubject">Description</label>
+        <textarea name="ticketDetails" id="ticketDetails" required></textarea>
+      </div>
+      <div id="ticketFormButtons">
+        <button id="submitTicket">Submit Ticket</button>
+        <!-- Continue the rest of the code from where you left off -->
+
+        <button id="cancelTicket">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="myTicketsOverlay">
+    <div id="myTicketsContent">
+      <span id="closeOverlay">&#10006;</span>
+      <h2>My Tickets</h2>
+      <table>
+        <thead>
+          <th>Ticket #</th>
+          <th>Subject</th>
+          <th>Priority</th>
+        </thead>
+        <tbody id="myTicketsBody">
+          <!--  User's ticket data goes here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <p>Simple Ticket System &copy;&trade;</p>
+    <p>EST. 2023</p>
+  </footer>
+</body>
+
+</html>
+

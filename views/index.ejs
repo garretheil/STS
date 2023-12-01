@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Ticketing System</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+  <script src="https://kit.fontawesome.com/998241e7ce.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1 id="title">Simple Ticketing System</h1>
+  </header>
+  <main>
+    <form id="loginForm" action="/newTicket.ejs" method="post"> <!-- Changed to a POST request -->
+      <div class="inputField">
+        <i class="fa-solid fa-user"></i>
+        <input id="usernameField" type="email" placeholder="Enter Email" required>
+      </div>
+      <div class="inputField">
+        <i class="fa-solid fa-key"></i>
+        <input id="passwordField" type="password" placeholder="Enter Password" required>
+      </div>
+      <div class="inputField">
+        <button id="loginButton" type="submit"> <!-- Changed to a submit button -->
+          <!-- Removed the <a> tag, as it's not needed for form submission -->
+          Login
+        </button>
+      </div>
+      <div id="moreActions">
+        <a href="/password" id="forgotPasswordLink">Forgot Password</a>
+        <a href="/register" id="newAccountLink">Create Account</a>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
